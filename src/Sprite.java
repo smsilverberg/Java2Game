@@ -1,4 +1,9 @@
+/*
+ * source: https://zetcode.com/javagames/ 
+ */
 import java.awt.Image;
+import java.awt.Rectangle;
+
 import javax.swing.ImageIcon;
 
 public class Sprite {
@@ -23,7 +28,9 @@ public class Sprite {
         ImageIcon ii = new ImageIcon(imageName);
         image = ii.getImage();
         //scaling the image
+        
         image = image.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH);
+        
     }
 
     //this one doesnt scale
@@ -58,5 +65,9 @@ public class Sprite {
 
     public void setVisible(Boolean visible) {
         this.visible = visible;
+    }
+
+    public Rectangle getBounds() {
+        return new Rectangle(x, y, width, height);
     }
 }
